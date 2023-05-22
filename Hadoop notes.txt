@@ -1,0 +1,117 @@
+> Hadoop is made up of 3 parts:
+	1. HDFS(Storage) - Hadoop Distributed File System
+	2. MapReduce(Processing) - processing large data sets in scalable & parallel fashion
+	3. YARN (Cluster Resource Management) - framework for job scheduling and cluster resource management. Helps MapReduce to find where the blocks are residing.
+
+> Hive:
+	- Use to apply schema to the data when there is requirement to analyze it.
+
+> Data Warehouse:
+	- Provides a common interface to the heterogenous form of data.
+	- Data warehouse data is read-only & non-volatile.
+
+>  ETL(Extract, Transform, and Load) will perform cleaning operation on the data in Staging Area.
+
+> Hadoop Cluster:
+	NameNode: Resource Manager	  ------> Main Node that manages DataNodes
+		- DataNode1
+		- DataNode2
+		- DataNode3
+		- DataNode4
+		
+> Port No. --->	Details
+	1. 8088 --> Shows Resource Manager Details
+	2. 50070 --> Shows NameNode Details
+	3. 19888 --> Shows Jobs history of Hadoop. MapReduce jobs are listed in it.
+	
+# hdfs dfsadmin -report:
+	- list the details & nodes in a hadoop cluster.
+	
+> NameNode = Master Process in hadoop
+> DataNode = Worker Process 
+
+> Volume: Defined as the Amount of Data Generated from the source.
+> Variety: Defined as the Type of Data Generated from the source.
+> Velocity: Defined as the Rate at which Data Generated from the source. eg. GB/s, MB/s, etc.
+
+> dfs.blocksize:
+	- When client sends the data to NameNode, it breaks the data into blocks(default size =128 MB) & the distributed blocks are stored in the Data Node individually.
+	eg. 512 MB of data = 128 MB
+						 128 MB
+						 128 MB
+						 128 MB
+	
+> dfs.replication: 
+	- Creates the replication (default value = 3) of blocks to other Nodes in Cluster.
+		eg. 4 blocks * 3 copies = 12 blocks.
+		
+> MapReduce:
+	-> Mapper function:
+		- Maps the data to respective blocks.
+
+> From a DB, Java can extract limited amount of data at a time in KBs or MBs because the bandwidth of Network between Java & DB is less.
+	
+		DB ----------------------> Java 
+				(Bandwidth)
+				
+> Mappers runs on the Nodes where the user requested blocks resides.
+
+> MapReduce generates the data in Key-Value format.
+
+> Hadoop process the data locally(on local machine) to reduce purchase and support price.
+
+> Hadoop cannot collect the data from sources, it just stores the data. Hence, Hadoop Ecosystem Projects contains tools that collaborate with Hadoop to extract data.
+
+> Hadoop Ecosystem Projects intergrates with Hadoop in order to collect data and store in Hadoop.
+	eg. Collect opinions of people on a film from Twitter using Apache Flume (tool for streaming data in Hadoop) and store in HDFS(Hadoop).
+	
+> Hadoop 2.x can be used as a Data Lake. 
+
+
+> Workflow of Hadoop:
+	Injesting the data ---------> Clean the data-------------> Transform -----------> Store in Hadoop
+
+> Hadoop Ecosystem Projects:
+	> PIG: ETL tool used over Hadoop.
+	> HIVE: Retrive results in schema format. Perform Data Analytics. 
+	> HBase: Non Relation Database having depedency of Hadoop.
+	> Accumulo: More secure than HBase.
+	> Ambari: Create and Manage Hadoop Clusters.
+	> Scoop: Import a schema based data from source to Hadoop.
+	> Falcon: Data Life Cycle Management tool of Hadoop.
+	> Oozie: Creating, Schdule or Automate the WOrkflow.(used before Airflow)
+	> Airflow: WOrkflow Management System.
+	> Solr: Quick Searching of Data on Hadoop.
+	> Storm: Capturing and Processing of Realtime data. (Realtime processing - Captures the data, process it, store it after processing immedietly). 
+	> Flume: Only Capturing the Data from sources.
+	> Zookeeper: Distributed
+	> Mahout: ML library in Java.
+	> Spark: Do all the things PIG, HIVE, STORM, MAHOUT can do.
+
+> Distros available with Hadoop:
+	- Cloudera
+	- HortonWorks
+	- Mappa
+	
+> Path of ROI:
+	Raw Data ----------> HDFS --------------> Perform ETL (PIG) ----------> Structured Data ---------->Data analysis (HIVE, SPARK) --------->  Answers to questions.
+
+> Hadoop can be deployed in Linux or Windows and On-premises and CLoud.	
+
+> Deployment Models:
+	-> Standalone Mode:
+		- contains single H/W machine.
+		- All Hadoop Services will run as a single JVM process.
+		- Cannot use HDFS. Uses local file system. Cannot make blocks to store data.
+		
+	-> Psudo Distributed Mode:
+		- contains single H/W machine.
+		- Each Hadoop Services deamon runs its own JVM process.
+		- Can use HDFS as well as local file System.
+		- All distros use this Mode.
+		
+	-> Distributed Mode:
+		- Multi system installation.
+		- Each Hadoop Services deamon runs its own JVM process.
+		- Uses HDFS on Local Disk.
+		- USed in Production environment.
