@@ -10,6 +10,7 @@
 	- Provides a common interface to the heterogenous form of data.
 	- Data warehouse data is read-only & non-volatile.
 
+> Data Warehouse is not a cost-effective way of storing Data. Hence, Big Data tools are used to save money and store large amount of data.
 >  ETL(Extract, Transform, and Load) will perform cleaning operation on the data in Staging Area.
 
 > Hadoop Cluster:
@@ -77,21 +78,23 @@
 	> HBase: Non Relation Database having depedency of Hadoop.
 	> Accumulo: More secure than HBase.
 	> Ambari: Create and Manage Hadoop Clusters.
-	> Scoop: Import a schema based data from source to Hadoop.
+	> Sqoop: Import a schema based data from source to Hadoop.
 	> Falcon: Data Life Cycle Management tool of Hadoop.
 	> Oozie: Creating, Schdule or Automate the WOrkflow.(used before Airflow)
 	> Airflow: WOrkflow Management System.
 	> Solr: Quick Searching of Data on Hadoop.
 	> Storm: Capturing and Processing of Realtime data. (Realtime processing - Captures the data, process it, store it after processing immedietly). 
 	> Flume: Only Capturing the Data from sources.
-	> Zookeeper: Distributed
+	> Zookeeper: Distributed coordination service.
 	> Mahout: ML library in Java.
 	> Spark: Do all the things PIG, HIVE, STORM, MAHOUT can do.
 
-> Distros available with Hadoop:
+> Distros available with Hadoop: Helps to improve productivity for Developer.
 	- Cloudera
 	- HortonWorks
 	- Mappa
+	- AWS
+	- Azure
 	
 > Path of ROI:
 	Raw Data ----------> HDFS --------------> Perform ETL (PIG) ----------> Structured Data ---------->Data analysis (HIVE, SPARK) --------->  Answers to questions.
@@ -115,3 +118,48 @@
 		- Each Hadoop Services deamon runs its own JVM process.
 		- Uses HDFS on Local Disk.
 		- USed in Production environment.
+
+> HDFS(Hadoop Distributed File System):
+	- Difference betn Linux/ Windows File system and HDFS is that, HDFS is distributed file system and Linux/ Windows resides on 1 system.
+	- Automatically maintains multiple copies of data block.
+	- Write-once, read-many times.
+	
+> NameNode is used to manage Namespace and Metadata (Permissions, Directory names, file system hierarcy, logs, etc.) of the DataNode.
+
+> In order to access any data from DataNode, the request 1st goes to the NameNode and then gets routed to respective DataNode.
+
+> Linux does not create block on File System. Hence, HDFS is an application that works on Linux on DataNode which creates the blocks on the storage and Linux helps to stores the data into the blocks.
+
+> DataNode holds the actual Data.
+
+> Creating a replica of blocks is responsibilty of DataNode.
+
+> Journaling Commands: Commands which change the state of a file.
+						eg. touch- adding a new file under a folder, changes the state of folder.
+						
+> Checkpointing: Stores In memory state of files.
+
+> Secondary NameNode can retrive the state of files, in case NameNode gets crashed, by checkpointing. Responsible for Checkpointing. Records the changes made in fs_image and merges it with edits.
+
+> Writing File to HDFS: 
+		Client node --------------------------> NameNode --------------------------------> DataNode1
+																						   DataNode2
+																						   DataNode3
+																						   
+> Checksum is used to maintain the integrity of data.
+	eg. DataNode1 must contain the same data(unchanged) like DataNode2.
+	
+> 1st replica of actual data is made on a different rack of DataNodes and 2nd replica is also made on different machine of same rack because the interrack communication of data is costlier rather than communicating with machines on same rack.
+
+> Home folder for hdfs user is /user/<distro_name>                 
+	eg. (/user/cloudera)
+	
+> Commands for Development environment and production environment is same.
+
+> fsimage : Holds Metadata and Namespace. Store state of NameNode
+> edits: store journaling information.
+
+
+# sudo find / -type f -name <filename.ext> -----> Find a file in linux
+
+> NameNode will be in safe mode (read-only) when fs_image and edits files are read during startup.
