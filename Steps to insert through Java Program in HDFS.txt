@@ -1,0 +1,6 @@
+1. Create a Java project in Eclipse
+2. Create a package name 'hdfs'.
+3. Add external libraries for hadoop available in '/usr/lib/hadoop/client'.
+4. Import the program from 'hdp/pigandhive/labs/Lab1.2/HDFS_API/InputCounties.java' into 'src/<package_name>'.
+5. Export the program and make the JAR file of it and save.
+6. Run the command in README file. 

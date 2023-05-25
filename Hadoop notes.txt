@@ -163,3 +163,29 @@
 # sudo find / -type f -name <filename.ext> -----> Find a file in linux
 
 > NameNode will be in safe mode (read-only) when fs_image and edits files are read during startup.
+
+> 'dfs' acts like a bash of HDFS.
+
+> 3 types of Commands in HDFS:
+	1. User (hdfs dfs): Manage files, directories and metadata. 
+	2. Inconsistency (fsck): check and reports on file system inconsistencies(does not repair).
+	3. Admin (hdfs dfsadmin): Reports basic file system information and statistics.
+	
+# put - Use to copy Local file into HDFS.
+# get - Retrive files in HDFS into local machine.
+# hdfs dfs -du [-s] [-h] [path]: (Disk Usage): shows no. of bytes consumed by a file or directory.
+# hdfs dfs -df : Shows Total Capacity of Disk and disk space consumed.
+# sudo netstat -nputl [| grep <process_id>]: Gives stats of all process_ids (display ports where the process is running).
+
+> "core-site.xml" will contain all the information about the port through which EdgeNode and NameNode can listen the request. They are also present on all DataNode so that they can communicate with NameNode.
+
+> Fat Client: All the libraries are installed in the local machine of the client. Uses RPC post 8020
+> Thin Client: Uses HTTP port i.e. 50070/50075
+
+> Sqoop:
+	-> '-m' is use to indicate no. of mappers used to pull the data. Deafult value is 4.
+	-> 'split-by' distributes the data into 4 equal parts. eg. 1000 records will be divided into 250 each and send to the mappers.
+	-> By default, 'split-by' splits the table on the basis of Primary key.
+	-> The query i.e whole data is distributed among the 4 mappers to store the data.
+	-> If no. of mappers exceeds the limit w.r.to data, the threshold value decreases and performance starts diminishing.
+	-> 
