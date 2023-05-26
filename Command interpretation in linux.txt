@@ -1,0 +1,12 @@
+5 Step process of shell interpretation of command:
+1. Tokenization
+2. Command Identification
+3. Expansion
+4. Quote Removal
+5. Redirection
+
+- Expansion:
+	1. Brace
+	2. Parameter, Arithmetic, Command Substitution, Tilda.
+	3. WOrd Splitting.
+	4. Globbing
