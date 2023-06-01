@@ -1,0 +1,53 @@
+> PIG:
+	- PIG is execution engine on top of Hadoop mainly use fo ETL operations.
+	- Does not run without Hadoop.
+	- PIG uses a Java MapReduce program to perform the operations. PIG will automate the process of writing MapReduce program.
+	- PIG programming statements are converted into LOGICAL PLAN when DUMP or STORE command is called.
+	- Function names and variable names are case sensitive.
+
+> pwd: 
+	hdfs://quickstart.cloudera:8020/user/cloudera/demos/pigdemo.txt<r 1> 80      ----->    <r 1> represents replication factor.
+
+> Relation / Alias converts the data into schema based format(table).
+
+> PIG follows lazy execution i.e. the current command checks its dependency on the previous command.
+	eg. employees = LOAD 'pigdemo.txt' AS (state, name);
+		ca_only = FILTER employees BY (state=='CA'); 
+
+> If datatype is not assigned to a field name, default data type assigned to a field is 'bytearray'.
+
+> When a relation command is executed, it will not load the data but it will create a logical plan where the schema variable is stored.
+
+# DUMP: use to display the command result on the terminal.
+
+> After DUMP command is run, it will create a job and run a MapReduce program to upload the data on HDFS.
+
+# FILTER command is used to filter the record and store it in the schema.
+
+> Tuple: Ordered collection of values.
+
+> Map: Collection of key/value pairs.
+		eg. <key#value>	
+
+> Bag: Collection of tuples.
+
+# STORE:
+	- If a file contains large no. of records which are retrieved using DUMP, the system will crash. Hence, STORE is used to store the result on HDFS. It will run a MapReduce program to complete the operation.
+	
+> Default delimiter to dislay the data is TAB(\t). To change delimiter PigStorage() function is used.
+	
+# aliases: used to view all logical plans.
+
+> If grunt shell is exited, all logical plans get vanished.
+
+> TextLoader(): use to load the data line by line in a relation or alias.
+
+> The type of GROUP bag will be same as the type of grouping column.
+
+# GENERATE: display the selected column from the schema.
+
+# PARALLEL: Specifies the number of parameters use to run the PIG operation.
+
+# Flatten: Seperate the values in a bag to a seperate rows in the schema.
+	eg. Rich,remote,{(SD)(CA)} 	--------> 	Rich,remote,SD
+											Rich,remote,CA
