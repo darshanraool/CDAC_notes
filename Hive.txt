@@ -1,0 +1,21 @@
+> HIVE: 
+	- It is a data warehouse for Hadoop. 
+	- It points to heterogenous form of data residing on HDFS and retrives it in the form of schema. 
+	- It is a folder residing on HDFS.
+	- The data stored in HIVE is in unstructured format, but if user want to see the data, it is visible in tabular format.
+	- Uses HiveQL as scripting language.
+	
+> Cloudera Path of HIVE: /user/hive/warehouse/
+> Hortonworks Path of HIVE: /app/hive/warehouse/
+
+# ROW FORMAT DELIMITED works on on Text(.txt) file.
+
+> Types of tables: 
+	- Managed: Data & Metadata both are deleted while dropping the table.
+	- External: Only Data gets deleted and Metadata remains as it is.
+	
+# LOCATION: stores the file in the specified location.
+
+> Metadata(Structure of the table like datatype of each field, database owner, location, etc.) is stored in MetastoreDB.
+# describe formatted <table_name>: Use to display metadata of the table.
+
