@@ -19,3 +19,22 @@
 > Metadata(Structure of the table like datatype of each field, database owner, location, etc.) is stored in MetastoreDB.
 # describe formatted <table_name>: Use to display metadata of the table.
 
+
+> Dynamic Partition: Used to distributed the data on the basis of a column which will act as a key.
+	eg. suppose we partitioned a table by COUNTRY column, HIVE will extract unique values in the country column and it will group the records based in countries and stores it the seperate files.
+		# create table dynamic_table(id string,name string) partitioned by (country string) row format delimited fields terminated by '\t';
+		- /user/hive/warehouse/dynamic_table/country=India
+		- /user/hive/warehouse/dynamic_table/country=US
+		- /user/hive/warehouse/dynamic_table/country=UK
+		
+# distributed by :
+	- Records with the specified field will be sent in the table using a single reducer.
+	eg. No.	Age	Name
+		1	10	abc
+		2	15	aaa
+		3	25	bbb
+		4	15	ccc
+		5	25	ddd
+	- Persons with age 15 and 25 with be sent with each reducers respectively. (1 for 15 and 1 for 25)
+		
+		
