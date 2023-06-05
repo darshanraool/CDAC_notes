@@ -171,7 +171,7 @@
 
 > 3 types of Commands in HDFS:
 	1. User (hdfs dfs): Manage files, directories and metadata. 
-	2. Inconsistency (fsck): check and reports on file system inconsistencies(does not repair).
+	2. Inconsistency (fsck): check and reports on file system inconsistencies(does not repair). Use to check the health of the file system, to find missing 				 files, over replicated, under replicated and corrupted blocks.
 	3. Admin (hdfs dfsadmin): Reports basic file system information and statistics.
 	
 # put - Use to copy Local file into HDFS.
