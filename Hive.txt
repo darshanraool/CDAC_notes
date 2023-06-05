@@ -26,9 +26,11 @@
 		- /user/hive/warehouse/dynamic_table/country=India
 		- /user/hive/warehouse/dynamic_table/country=US
 		- /user/hive/warehouse/dynamic_table/country=UK
-		
+
+> Skewed Table:
+	
 # distributed by :
-	- Records with the specified field will be sent in the table using a single reducer.
+	- Records with the specified field will be sent in the table using a n reducer.
 	eg. No.	Age	Name
 		1	10	abc
 		2	15	aaa
@@ -37,4 +39,14 @@
 		5	25	ddd
 	- Persons with age 15 and 25 with be sent with each reducers respectively. (1 for 15 and 1 for 25)
 		
-		
+> JOIN:
+	1. Shuffle Join: Joins keys are shuffled using MapReduce, and joins are performed on Reduce side.
+	2. Map(Broadcast) Join: Small tables(tables which can be fitted into the distributed cache) are loaded into memory in all nodes. Scans for bigger table and determine if the required records are available in smaller table.
+	3. Sort-Merge-Bucket Join: Requires bucketed tables. Joins with the help of co-relation keys.
+	
+> Ngram: 
+	- Extracting the collection of 'n' no. of words.
+	- Use to find frequency of words.(Highest frequent words are shown on the TOP)
+# select explode(context_ngrams(sentences(line),array(null,"the",null),20)) as result from constitution;
+
+> SERDE: Converts the binary form of data from .avro file and put it in table by converting it to the text format.
