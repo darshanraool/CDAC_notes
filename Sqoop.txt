@@ -1,0 +1,44 @@
+> Sqoop:
+	-> '-m' is use to indicate no. of mappers used to pull the data. Deafult value is 4.
+	-> 'split-by' distributes the data into 4 equal parts. eg. 1000 records will be divided into 250 each and send to the mappers.
+	-> By default, 'split-by' splits the table on the basis of Primary key.
+	-> The query i.e whole data is distributed among the 4 mappers to store the data.
+		eg.	-rw-r--r--   1 cloudera cloudera          0 2023-05-25 02:37 salaries/_SUCCESS
+			-rw-r--r--   1 cloudera cloudera        272 2023-05-25 02:37 salaries/part-m-00000
+			-rw-r--r--   1 cloudera cloudera        241 2023-05-25 02:37 salaries/part-m-00001
+			-rw-r--r--   1 cloudera cloudera        238 2023-05-25 02:37 salaries/part-m-00002
+			-rw-r--r--   1 cloudera cloudera        272 2023-05-25 02:37 salaries/part-m-00003
+			
+			- salaries.txt is uploaded and by default it is stored in salaries folder. Above are the 4 Mappers used to import the data in HDFS.
+
+	-> If no. of mappers exceeds the limit w.r.to data, the threshold value decreases and performance starts diminishing.
+	-> If folder is not specified on HDFS, by default table name is taken as folder name.
+	-> Mapper history can be viewed in localhost:19888/JobHistory, click on job id and click on logs by clicking on 'Attempt Type'. 
+
+> 3 ways to see logs:
+	1. Job History: 19888
+	2. localhost:8088
+	3. using 'yarn'
+
+> inserting values into Hadoop with sqoop:
+	# sqoop import --connect jdbc:mysql://quickstart.cloudera:3306/test --driver com.mysql.jdbc.Driver --username root -password cloudera --table <table_name>
+
+> select Query using sqoop
+# 	sqoop import --connect jdbc:mysql://quickstart.cloudera:3306/test --driver com.mysql.jdbc.Driver --username root --password cloudera 
+	--query "select * from salaries s where s.salary > 90000.00 and \$CONDITIONS" --split-by gender -m 2 --target-dir salaries3 
+	
+	-> --query cannot be used without --split-by.
+	-> \$CONDITIONS 
+
+> to display LOGS of a job in terminal:
+#	yarn logs -applicationId <application_jobid> 									
+		- eg. yarn logs -applicationId application_1685068466243_0003
+		
+> Distribution Copy(DistCP):
+	- Create a replica of the data from one cluster into another Hadoop cluster.(Just like AWS replica) to avoid data loss.
+	- Uses MapReduce mappers to make the copy of the data.
+	- if mapps not specified, Default amppers will be 20.
+	# hadoop distcp hdfs://<namenode1>/<source_folder_path>  hdfs://<namenode2>:<portno>/<destination_folder_path>
+	
+> Try automating the above process.
+--------------------------------------------------------------------------------------------------------------------------------------------
