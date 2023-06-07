@@ -50,3 +50,7 @@
 # select explode(context_ngrams(sentences(line),array(null,"the",null),20)) as result from constitution;
 
 > SERDE: Converts the binary form of data from .avro file and put it in table by converting it to the text format.
+
+> Windowing functionality: (Over Clause)
+
+> Beeline: JDBC/ODBC based CLI.

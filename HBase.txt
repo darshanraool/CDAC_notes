@@ -1,0 +1,20 @@
+> Store the data together on which data operations are performed together.
+
+> Cannot perform JOIN and GROUP operations.
+
+> Hbase has the dependency of hadoop and zookeeper.
+
+> Creating table:
+	# create 'notification','attributes','metrics'
+		where, notification = table name
+				attributes , metrics = column family (group of columns which are symmentically related).> Column cannot exists without column family.
+
+> Columns are created during the insertion of data.
+
+> Every table must have 1 column family.
+
+> RowID must be unique.
+
+> When table is created in HBase, it automatically gets uploaded on HDFS.
+
+> On HDFS, folders are made of the name of Column Families in columer file format(binary format). The file where data is stored is called as HFile.
