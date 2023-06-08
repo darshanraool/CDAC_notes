@@ -1,0 +1,20 @@
+> Spark:
+	- Batch and real-time data processing system.
+	
+> Spark Modes of Deployment:
+	- Local  Mode: Runs on Single machine.
+	- Cluster Mode: Set of multiple machines.
+	
+> repl: Interactive shell of Spark;
+
+> SparkContxt: Entry point in the Spark Cluster. Way to connect in the Spark World.
+
+> RDD(Resilient Distributed Dataset): Base data model for . It is a distributed Dataset. It is a distributed data structure of spark. 
+> RDD is a collection of the data in the blocks known as Partitions created by Spark. The blocks of spark collects the data from the blocks of Hadoop.
+	
+> RDD pratitions are created on the memory of the DataNodes where the blocks of Data are created.
+
+> test-jupyter/P1/M1/*.ipynb
+
+> export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"

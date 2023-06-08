@@ -5,8 +5,8 @@
 > Hbase has the dependency of hadoop and zookeeper.
 
 > Creating table:
-	# create 'notification','attributes','metrics'
-		where, notification = table name
+	# create 'notification','attributes','metrics'.
+		- where, notification = table name
 				attributes , metrics = column family (group of columns which are symmentically related).> Column cannot exists without column family.
 
 > Columns are created during the insertion of data.
@@ -17,4 +17,36 @@
 
 > When table is created in HBase, it automatically gets uploaded on HDFS.
 
-> On HDFS, folders are made of the name of Column Families in columer file format(binary format). The file where data is stored is called as HFile.
+> On HDFS, folders are made of the name of Column Families in columnar file format(binary format). The file where data is stored is called as HFile.
+
+> Regions:
+	- HBase table is divided into horizontal partitioning known as Regions.
+
+> RegionServers: 
+	- These Regions reside on various different DataNode known as RegionServers.
+
+> Creating and deleting the table (DDL operations) are handled by HMaster process.
+
+> Zookeeper maintains the state of servers i.e. which servers are alive and available to serve the request and send notification in case of failure.
+
+> Ephurmal node is in memory. It will start a session of DataNode in zookeeper which will represent the state of the DataNode.
+
+> Meta Table holds the info. about the regions.
+
+> View table in zookeeper:
+	# ls /hbase/table: 
+
+> Delete the table from zookeeper.
+	# rmr /hbasse/table/<table_name>: Run this command and restart hbase services.
+
+> RegionServers components:
+	- WAL: Used to store new data that is not in permanent storage. Used to recover in case of failure. Used for crash recovery of the data.
+	- BlockCache: Read the frequently accessed the data in the memory.
+	- MemStore: Stores the new Data which is not written on the disk. 1 MemStore for 1 ColumnFamily.
+	- 
+	
+> Minor Compaction:
+	- HBase picks up smaller HFile and writes it in bigger HFile. It is called as Minor Compaction.
+	
+> Major Compaction:
+	- Merges and rewrites all HFiles in a region to one HFile per column family.
