@@ -1,0 +1,40 @@
+> Kafka is only used for transferring the real-time data from source system to the target system.
+> Kafka does not process the data.
+
+> Topic: Particular Stream of Data. (It is like a table).
+
+> Topics are split into partitions.
+
+> PArtitions hold messages and has an increamental id known as offset.
+
+> Kafka acts as a mediator between Producer and consumer of the Data.
+	eg. Gives or Tracks the Location of a plane(Producer) and provides it to a website(Consumer).
+	
+> Order of Data transmitted = Order of Data Consumed.
+
+> Data i.e. Messages is kept only for a limited period (default is one week).
+
+> Data cannot be changed after it is assigned to partition.
+
+> Broker is a physical machine which has kafka service running on it. It holds the topics and partitions. It is like a DataNode in HDFS.
+
+> Topic has a replication factor in case of fault tolerance(usualyy between 2 and 3).
+
+> Leader of a partition is a Broker which can receive and serve the data and other Broker can sync the data with it.
+
+> Zookeeper elects the Leader Broker of the partition.
+
+> Producers: writes the data to the partitions of the topics. It knows on which topic and partition the data is to be written.
+
+> Producers recovers itself in case of failure.
+
+> Producer Acknowlegment ensures that how much data is lost from the Broker.
+	acks=0 
+	acks=1
+	acks=all
+	
+> Message Key: 
+	- A key is sent with the messages so that all the messages with same key must go to 1 partition.
+		eg. Info of Truck1 must go to same partition. 1 partition contains all info of Truck 1.
+		
+> Consumer: Read the data transmitted by Producer in the same order in which data is transmitted.

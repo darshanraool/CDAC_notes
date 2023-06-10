@@ -14,7 +14,10 @@
 	
 > RDD pratitions are created on the memory of the DataNodes where the blocks of Data are created.
 
-> test-jupyter/P1/M1/*.ipynb
+# export PYSPARK_DRIVER_PYTHON="jupyter"
+# export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
-> export PYSPARK_DRIVER_PYTHON="jupyter"
-export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+> PySpark SQL is spark library for structured data. Provides more info. about structured data and computation.
+
+> PySpark Data Frame is an immutable distributed collection of data with name columns.
+
