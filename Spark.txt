@@ -21,3 +21,4 @@
 
 > PySpark Data Frame is an immutable distributed collection of data with name columns.
 
+> Parquet file can store the data with metadata. (data with respective schema).
