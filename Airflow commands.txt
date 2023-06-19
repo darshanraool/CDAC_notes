@@ -1,0 +1,29 @@
+Airflow commands:
+
+# source ~/unset_jupyter.sh
+
+# echo $PYSPARK_DRIVER_PYTHON
+
+# echo $PYSPARK_DRIVER_PYTHON_OPTS
+
+# unset PYTHONPATH
+
+>Activate virtual Environment of Airflow:
+	# conda activate airflow-tutorial
+
+> HOME folder for airflow-home:
+	# echo $AIRFLOW_HOME
+	
+# code .
+
+> To initialize or reset DB:
+	# airflow initdb/airflow resetdb
+
+> Run a webserver(On 2nd terminal window):
+	# airflow webserver
+	
+> Run a scheduler(On 3rd terminal window):
+	# airflow scheduler
+	
+> To Hide all the practice DAGs and show only DAGs in our folder:
+	# load_example = False  (and reset all the process i.e server,scheduler and resetdb)

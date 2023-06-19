@@ -22,3 +22,14 @@
 > PySpark Data Frame is an immutable distributed collection of data with name columns.
 
 > Parquet file can store the data with metadata. (data with respective schema).
+
+> Run Spark Job on hadoop cluster. (using cluster mode of deployment)
+	# spark-submit --master yarn --deploy-mode cluster --driver-memory 2g --num-executors 2 --executor-memory 1g duplicates.py
+	# yarn logs -applicationId <applicationId> : To see logs (output) of the Job on cluster side.
+	
+> Run Spark Job on hadoop cluster. (using client mode of deployment)
+	# spark-submit --master yarn --deploy-mode client --driver-memory 2g --num-executors 2 --executor-memory 1g duplicates.py
+	
+> On Cluster mode of Deployment, the application runs on cluster side and the output is displayed on the cluster side.
+
+> On Client mode of Deployment, the application runs on cluster side and the output is displayed on the client side.
