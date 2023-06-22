@@ -1,2 +1,2 @@
 # hadoop_notes
-This contains Hadoop notes of CDAC
+This contains notes of CDAC
