@@ -1,0 +1,111 @@
+> Types of Analytics:
+	1. Descriptive Analytics
+	2. Predictive Analytics
+	3. Prescriptive Analytics
+
+> Types of ML Algorithms:
+	1. Supervised Learning: Used in prediction. Predict the values of the outcome values.
+		- Types:
+			i. Regression: Response is numeric in nature. (eg. How much sales will be there in the next year. It will generate numeric response.)
+			ii. Classification: Response is in category (eg. whether shop sales will be > 5000 or not, Yes or No?)
+	
+	2. Unsupervised Learning Algorithms: There is not outcome in the output of this algorithm.
+	3. Re-inforcement Leaning: There is an agent who receives information from the environment and learns.
+	
+> Mean:	
+	- Average of the entities.
+	-> Harmonic Mean:
+		- Reciprocal of mean of reciprocles.
+			eg. harmonic mean of (a,b)= 1/(1/a + 1/b)/2 = 2ab/(a+b)	
+			
+> Median:
+	- Middle element of the data.
+	- Is not sensitive to extreme data or outliers. If one record act as an outlier, the median will not change or will change to some extent.
+
+> Mean is sensitive to outliers, i.e., mean will be change drastically.
+
+> Mode: 
+	- Value with greatest frequency. 
+	- The value which is repeated very large times in the data. 
+	- There can be multiple nodes for a single data. It is known as multi-modal data.
+	
+> Quartiles:
+	- Divides the sorted data into 4 equal parts. Each part has equal no. of records.
+	- Quartiles are equally spaced if the data has equal difference between the records.
+
+> Deciles:
+	- Divides the sorted data into 10 equal parts. Each part has equal no. of records.
+	
+> Percentiles:
+	- Divides the sorted data into 100 equal parts. Each part has equal no. of records.
+	- eg. If a candidate scored 89 percentile, i.e., 89 % of total observations are below him.
+	
+> Dispersion:
+	- Scatteration of values.
+	
+> Mean Deviation:
+	- Sum of Difference between mean and every value of the data.
+	- Used to find out how much difference is there between the mean and the values of the data.
+
+> Variences:
+	-
+	
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+> Probability:
+	1. Collectively Exhautive Events: Any one event will occur in a set of given events.
+	
+> Rules:
+	# Probability of not occuring of element = 1 - Probability of occuring of element
+		eg. probability of ocuurance of A = 0.7
+			hence, Probability of not occuring of A = 1 - 0.7 = 0.3
+
+> Conditional Probability: Calculating the probability of current event on the basis the probability of previous occured event.
+	eg. P(A|B): Calculating probability of A on the basis of probability of B. Checking either A will occur or not on the basis of probability of previously ocuured event B.
+	
+> Probability distribution: Pattern of randomness of random variable.
+
+> Mathemaical Expectations: 
+	- Expected value of discrete variable.
+	- It is equal to Arithmetic Mean. 
+	
+> Marginal and conditinal probability distribution:
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+	
+> Binomial Distribution:
+	- It is a discrete probability distribution that gives only two possible results in an experiment, either success or failure.
+	- funtions:
+		1. binom.pmf(k,n,p,...) -> Applies for P(X=k)
+		2. binom.cdf(k,n,p,...) -> Applies for P(X<=k)
+		3. binom.sf(k,n,p,...) -> Applies for P(X>k)
+		4. binom.stats(n,p,..) -> Applies for extracting mean,variance and other moments
+		
+> Poisson Distribution:
+	- Failure is very less(near to negligible).
+	- Use cases:
+		-> Number of accidents happening on a road in a certain period of time.
+		-> Number of defects in an item piece.
+		-> Number of arrivals at a particular counter in a certain period of time.
+		-> Number of calls received by a customer care division in a certain period of time.
+	- functions:
+		1. poisson.pmf(k,mu,...) -> Applies for P(X=k)s
+		2. poisson.cdf(k,mu,...) -> Applies for P(X<=k)
+		3. poisson.sf(k,mu,...) -> Applies for P(X>k)
+		4. poisson.stats(mu,..) -> Applies for extracting mean,variance and other moments.
+		
+> Policy: When the p - value is less than alpha,reject H0,otherwise we do not reject H0.
+
+
+> One hot Encoding:
+	- Labelling the non numeric columns in numeric form to perform linear regression.
+		eg. Male Female
+			 1	   0
+			 0	   1
+			 1	   0
+			 1	   0
+			 0 	   1
+			 
+		1 - Person is male, 2 - Person is female
+			 
+		
