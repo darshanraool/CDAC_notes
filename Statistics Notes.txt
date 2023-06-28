@@ -108,4 +108,12 @@
 			 
 		1 - Person is male, 2 - Person is female
 			 
-		
+
+> .fit() method applies the model on the data we provide. It generates an equation for linear regression and generates a tree for DecisionTreeRegressor.
+
+> Feature Importance is attribute which states the factors which affects the response variable on the very high value.
+
+> Gini is used to find impurity index in the data(errors). More the purity lesser the imputiry.
+
+> In DecisionTreeClassification, The majority value count between 0 and 1 will be considered. That is, if count of 0 is greater, 0 will pe considered as prediction or else 1 will be considered as prediction.
+
