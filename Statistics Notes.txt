@@ -1,3 +1,6 @@
+Datasets: UCI Dataset Repository
+
+
 > Types of Analytics:
 	1. Descriptive Analytics
 	2. Predictive Analytics
@@ -117,3 +120,8 @@
 
 > In DecisionTreeClassification, The majority value count between 0 and 1 will be considered. That is, if count of 0 is greater, 0 will pe considered as prediction or else 1 will be considered as prediction.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+> Feasible solution is an ultimate solution for all the problems.
+
+> 
