@@ -1,0 +1,70 @@
+> Artificial Intelligence : Technology that can do its task without any human intervention(action).\
+
+> Machine learning: It provides the statistical tools for analyze and forecast or predict the data.
+
+> Deep Learning: Subset of ML. It is used to mimic the human brian i.e it learns from the data just like human brain.
+
+> Main job of Data Scientist is to deal with all the above technology to develop an AI application.
+
+> How to learn and understand the working of any Algorithm:
+    1. What problem the algorithm solve?
+    2. Geometric Intuition: Understand the solving answers using diagrams.
+    3. Mathematical Intuition: Understand the mathematics behind the working of Algorithms. 
+
+> Types of ML Algorithms:
+    - Supervised ML: Predict the values of dependant variable from independant variable. It gives the data of dependant and independant
+                    variable to train the model. And when a new value comes, the model predicts the result of new value based on the results of old values. 
+        -> Types of Supervised ML: 
+            1. Classification: The dependant feature(variable or column) contains categorical values.
+                eg. Pass/Fail -> Binary Classification Problem.
+                    Predicting the type of animal from data i.e Lion, Tiger, Dog, Cat -> Multiclass classification.
+
+            2. Regression: The dependant feature(variable or column) contains numerical or continuous values.
+                eg. House Prices prediction by its location.
+                    Prediction of Salary by Designation and Experience.
+
+    - Unsupervised ML: There is no output in this type of ML Algo. The dataset if divided into groups called CLUSTERS. Unsupervised learning models don't need supervision while training data sets, making it an ideal ML technique for discovering patterns, groupings and differences in unstructured data.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+> ML Algorithms:
+
+    -> Linear Regression: 
+        - Use to identify the best fit line with minimal error the help of calculating the means of the errors of all the datapoints.
+        - Predicts a value of a variable on the basis of various dependant variable.
+        - Residual error: Difference between actual value(Value on the best fit line) and predicted Value of a record in the dataset.
+        - Best fit line is a line whcih tells you about the predicted values of Y variable with respect to X variable.
+        - Equation of straight line:
+            y = mx + c 
+                where m -> slope of line. It means change in value of Y variable when X variable is changed by 1 unit.
+
+
+    -> Ridge Regression:
+        - If the best fit line passes through all the points of the training data, the accracy of model is 100%.
+        - But when a new point arrives as a testing data, the best fit line does not pass from all the points.
+        - Hence, the model seems to be overfitted.
+        - Overfitting:
+            -> When, Model performs well with training data (Model accuracy is good i.e passes through all points) and fails to perform with test data ------> Low Bias , High Variance.
+        - Underfitting:    
+            -> When, Model fails to performs well with training data (Model accuracy is bad i.e. doesnt passes through all points) and fails to perform with test data ------> High Bias , High Variance.
+        - Ridge Regression is used to avoid the overfitting of the algorithm by adding the product of hyperparameter (lambda) and slope square to the equation.
+        - lambda hyperparameter specifies that how fast the steepness of line must be made lesser or higher.
+        - Main aim of Ridge Regression and lasso Regression is to make cost function as low as possible but not zero to avoid overfitting.
+
+    -> Lasso Regression:
+        - Lasso Regression is used to avoid the overfitting of the algorithm by adding the product of hyperparameter (lambda) and mod of slope to the equation.
+        - It helps to avoid the overfitting of algorithm and also helps for feature selection.
+
+	
+
+	-> Ensemble Classifier:
+		1.Voting:
+			- Can Apply Multiple algorithms on a single dataset and predict the values of response variable. We consider the predicted value which occurs majority number of times.
+				eg. Value of dependant variable using:
+					1. Logistic Regression: 1
+					2. DecisionTreeClassifier: 0
+					3. LDA : 0 
+					Predicted value = 0
+			- Can also take probabilities instead of 0 & 1 and calculate the mean of probabilities.
+			- When we predict the values in 0 and 1 -------> Hard Voting
+				When we predict the probabilities of response variable -------> Soft Voting

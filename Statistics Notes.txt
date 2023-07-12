@@ -126,13 +126,10 @@ Datasets: UCI Dataset Repository
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
-> Shapiro Test is used to identify where the population is normally distributed or not.
-
-> Mann-whitney test is used to identify whether the distribution of samples is equal or not.
-
+> Principle Component:
+	- Extracting/ Forming the columns from the features (independant Columns) of the dataset.
+	
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
-> ANOVA test is used to check the correlation between a categorical and a numerical column. It distributes the numerical column into groups (partitions) on the basis of catgories and then compare the means of the numerical values of different groups.
-
-> Chi-square test is a statistical test used to compare observed results with expected results. Used to find the relation between the catgorical variables. The distribution of a categorical variable in a sample often needs to be compared with the distribution of a categorical variable in another sample.
-
+> In SimpleImputer, .fit() calculate the operation specified in the strategy 
+					.transform() fills the values in the place of NULL values.
