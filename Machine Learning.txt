@@ -25,6 +25,13 @@
 
     - Unsupervised ML: There is no output in this type of ML Algo. The dataset if divided into groups called CLUSTERS. Unsupervised learning models don't need supervision while training data sets, making it an ideal ML technique for discovering patterns, groupings and differences in unstructured data.
 
+> Parameters: They are the arguments which are used to control the training aspects of the algorithm. Parameters are passed by default internally by the algorithm itself if we do not specify any of them.
+
+> Hyperparameter : They are the user-defined arguments which are used to control the training criteria of the algorithm. They are expicitly passed by user while writing the code.
+    eg. max_depth of the tree: [3,4,5,6,7] --> It will calculate the output for all the depths of the tree.
+
+> GridSearchCV : It is a technique which enable us to pass multiple hyperparameter and chooses the best score and best parameter from it. Finds the optimal parameter values from a given set of parameters in a grid.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 > ML Algorithms:
@@ -56,6 +63,32 @@
         - It helps to avoid the overfitting of algorithm and also helps for feature selection.
 
 	
+    -> Naive Bayes Algorithm: 
+        - It is a Classification Algorithm.
+        - It predicts the probability of independant variable with the help of probabilities of dependant variable.
+        - It uses Bayes Theorem to calculate the probability of response variable i.e. given by:
+        - If the probability of dependant variable > 0.5 -----> True, else ---------> False
+
+            P(B|A) = (P(B) * P(A|B)) / P(A) 
+
+        - In case of dataset columns:
+
+            P(y|X1,X2,X3 ... Xn) = (P(Y) * P(X1)*P(X2)*P(X3) ... P*(Xn)) / P(X1)*P(X2)*P(X3) ... P*(Xn)
+
+                where y = Dependant variable (variable to be predicted)
+                    X1,X2,X3 ... Xn : independant variables.
+
+        - e.g.
+            P(Yes|Xi) = 0.13    &   P(No|Xi) = 0.05         ... Xi is one of the column of dataset.
+            Hence, the predicted value for Y will be = Yes.
+
+
+
+
+
+
+
+
 
 	-> Ensemble Classifier:
 		1.Voting:
