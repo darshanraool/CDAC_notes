@@ -82,16 +82,56 @@
             P(Yes|Xi) = 0.13    &   P(No|Xi) = 0.05         ... Xi is one of the column of dataset.
             Hence, the predicted value for Y will be = Yes.
 
+    -> K- Nearest Neighbour: 
+        - Standardization is required.
+        - Gets affected by outliers.
+
+    -> DecisionTreeClassification:
+        - It is a classification algorithm which makes a tree by splits the values in column by the category. 
+            eg. Weather column is splitted into 3 categoryies Sunny, Overcast, Rain. 
+        - Pure Split:
+            - The possibility of the leaf node is either all YES or all NO. (probability of any 1 category is 100%).
+                eg. Chances to play tennis in sunny weather is 4 Yes / 0 No.
+        - Pure Split Node will never be splitted further.
+        - Impure Split:
+            - The possibility of the leaf node is distributed. (probability of any 1 category is 70% and 2 category is 30%).
+        - In case of Impure Split, the algorithm takes another feature for splitting after the values of 1st column gets over for splitting.
+            eg. possibility to play tennis in sunny weather is 2 Yes/3No. Hence, the temperature feature will be considered after the sunny weather values are not remaining.
+
+        - Entropy: 
+            - A measure of disorder or impurity in a node. Entropy is an information theory metric that measures the impurity or uncertainty in a group of observations.
+        - Entropy will be always in between 0 to 1.
+            - If Entropy = 0 (Pure Split). 
+                Entropy = 1 (Impure Split).
+        - Entropy of Leaf Node = 0 
+        - If the Entropy is > 0 , then split the column further.
+        - Information gain: 
+            - Use to decide which column to be considered for splitting. The column with larger Information Gain will be considered first for splitting.
+            eg. Info. Gain of Feature 1 = 0.049
+            Info. Gain of Feature 1 = 0.051             -------> Splitting will start from Feature 2.
+        - Information Gain can be calculated by calculating the entropy of every column by considering all the possible splits of the column and add the value of entropy of all splits.
+
+        - Gini impurity:
+            - Gini impurity is a function that determines how well a decision tree was split.  Basically, it helps us to determine which splitter is best so that we can build a pure decision tree. 
+            - Gini impurity ranges values from 0 to 0.5.
+            - It is similar to Entropy.
+            - It is faster than Entropy. Hence, Gini Impurity is used tocalculate the impurity. 
+
+        - What if, The features contains all continuous values.
+            - It will calculate information gain of every value in the feature and the value with highest information gain, it will be considered as a root node.
 
 
-
-
-
-
-
-
-	-> Ensemble Classifier:
-		1.Voting:
+	- DecisionTreeRegression:
+        - How a column is selected for splitting? 
+            - Initially, the Mean of Output variable is calculated.
+            - Later, the MEAN_SQUARED_ERROR is used instead of Entropy and Gini Impurity.
+            - The mean value is assigned to Feature 1 and it computes MEAN_SQUARED_ERROR of the column. Then it will split the values. 
+            - As the mean value gets reduced, closer to the leaf node we go.     
+    
+    
+    -> Ensemble techniques:
+        - Works for both Classification and Regression.
+        1.Voting:
 			- Can Apply Multiple algorithms on a single dataset and predict the values of response variable. We consider the predicted value which occurs majority number of times.
 				eg. Value of dependant variable using:
 					1. Logistic Regression: 1
@@ -101,3 +141,43 @@
 			- Can also take probabilities instead of 0 & 1 and calculate the mean of probabilities.
 			- When we predict the values in 0 and 1 -------> Hard Voting
 				When we predict the probabilities of response variable -------> Soft Voting
+
+        2. Bagging:
+            - Classification:
+                1) Creats multiple subsets of the data and apply different algorithms on every subset of the data.(rows can be duplicated from one subset to another).
+                2) It takes the predicted value of all the algorithms and consider final result as the majority value among all the predicted values of the algorithm.
+                    eg. Output of : 
+                        Logistic Regression --> 0
+                        KNN Classifier --> 0
+                        DecisionTreeClassifier --> 1
+                        GaussianNB --> 0
+                    Final predicted value = 0
+            - Regression:
+                1) Calculate the MEAN of all predicted values obtained by applying multiple algorithms on dataset.
+                    eg. RandomForest Classifier & Regression 
+            - In bagging, the records which does not get involve into the sample acts as the testing data for that specific sample.
+            
+        3. Boosting:
+            - Initially, we give train test data to 1st prdictive model.
+            - It calculates the error in the predicted values with actual testing data.
+            - Afterwards, we give the data to next model with train and test data.
+            - There, We consider test data as the errors obtained in the previous model.
+            - Hence, the purpose of the technique is to make a weak learning algorithm into strong one.
+            - It is sequential technique.
+            - eg. AdaBoost, GradientBoost, XGBoost
+
+
+    -> RandomForestClassifier:
+        - It is a bagging technique algorithm.
+        - The drawback of DecisionTree is overfitting. It splits the column upto the complete depth and upto the extent of the feature.
+        - It is collection of multiple DecisionTrees.
+        - We can set 'MAX_FEATURE = value' hyperparameter. It will take only 'value' no. of columns for every split.  
+            eg. Consider, there are 4 DecisionTree. 4 subsets of datasets will be created on the basis of row and feature sampling & will be given as input to DecisionTree.
+                Hence, the majority value of among all 4 algorithms will be the final predicted value.
+        - Standardization is not required.
+        - Does not get affected by outliers.
+
+    -> AdaBoost:
+        - We apply a weight to every record of the data such that the sum of all the records will be 1.
+        - After, we create a decision tree of only 1 depth by spliting the column on the basis of information gain. It is called as Stump.
+        - In the 2nd iteration, the weights of errors get increased because these records must go to the next iteration and perform the next iteration.
