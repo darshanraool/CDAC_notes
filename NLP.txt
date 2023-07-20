@@ -1,0 +1,54 @@
+> NLP(Natural Language Processing):
+	- Used for Sentiment analysis.
+	- Convertion of Text data into Numerical data and assigning lables to it.
+	
+> Corpus:
+	- Collection of text is called as Corpus.
+	- eg. Tweets, Comments. 
+
+> Approaches to NLP:
+	- Bag of Words.
+	- Embedding approach.
+	
+> CLeaning of Text:
+	- Preprocessing of Text.
+	- eg. Removing punctuation marks.
+	
+> Stemming:
+	- Reducing the word to their base word.
+	- eg. Complication, complicated, complicate -------> complic
+	- Algorithm to perform this activity -------> Porter Stemming.
+
+> Lemmetization:
+	- Reducing group of words into their dictionary form or LEMMA.
+	- eg. going, went,gone, goes -----------> go
+	- Includes part of speech, meaning of word.
+	
+> Stop Words:
+	- Neutral words in language(Not a negative or positive words).
+	
+> Count Vectorization / TDM(Term Document Matrices):
+	- Create a matrix specifying Frequency of Words in a Corpus.
+	- Creates columns of each word in a corpus.
+	
+> Inverse Document Frequency(IDF):	
+	- How many document contains the specified word out of all the documents.
+	- Total number of documents / Number of document the word appears.
+	- Rare the term, Bigger the IDF.
+	
+> TF-IDF :
+	- Bag of Word Approach.
+	- A handy algorithm that uses the frequency of words to determine how relevant those words are to a given document.
+	- Term Frequency of word * IDF of word.
+	- How many document contains the word and how frequent the word is occuring.
+
+> Tokenization:
+	- Breaking a sentence into list of words.
+	
+> WordCloud:
+	- Graph specifying frequency of word in document.
+	- Bigger the size, higher the frequency.
+
+> max_features(N):
+	- Hyperparameter of CountVectorization.
+	- Display top N words with high frequency. 

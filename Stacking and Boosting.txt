@@ -1,0 +1,12 @@
+> Boosting is more time consuming than RandomForest, because in RandomForest the boostraping is executed parallely, but in Boosting, the 
+boostraping is fone only after the 1 boosting is over.
+
+
+> Stacking: Apply more than 2 algorithms on dataset and form a dataset of values obtained by prediction of algorithms. Apply another algorithm(Final estimators) and predict
+final values of the dataset.
+
+> Time series components:
+	1. Trend: Long term increase or decrese of in data.
+	2. Seasonal: Contains pattern with regular interval.
+	3. Cyclic: 
+	4. Random:
