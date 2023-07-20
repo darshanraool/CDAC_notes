@@ -121,7 +121,7 @@
             - It will calculate information gain of every value in the feature and the value with highest information gain, it will be considered as a root node.
 
 
-	- DecisionTreeRegression:
+	-> DecisionTreeRegression:
         - How a column is selected for splitting? 
             - Initially, the Mean of Output variable is calculated.
             - Later, the MEAN_SQUARED_ERROR is used instead of Entropy and Gini Impurity.
@@ -181,3 +181,44 @@
         - We apply a weight to every record of the data such that the sum of all the records will be 1.
         - After, we create a decision tree of only 1 depth by spliting the column on the basis of information gain. It is called as Stump.
         - In the 2nd iteration, the weights of errors get increased because these records must go to the next iteration and perform the next iteration.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Unsupervised Algorithms:
+    -> K-Means:
+        - K stands for centroid on the group (center point of the group).
+        - We will create groups in the data and can apply different algorithms on different groups.
+        - Steps to create groups in data:
+            - Try multiple K values.
+            - Initialize K no. of centroids. It will plot the centroid on the graph & will create a cluster of the points which is near to the respective centroids. 
+            - Compute the average of each group to update centroids.
+        - Elbow Method:
+            - Used to define the best value of K which will give us best centroids of the group.
+            - It will iterate for every centroid value we give and check distance of every point from centroid.
+            - The centroid with minimum distance from every point will be considered as the bes centroid.
+            - WCSS(Within Cluster Sum of Squares) - Sum of squares of all values in a cluster.
+
+    -> Hierarchical Clustering:
+        - Find the distance between the points and points with minimum distance will form a cluster.
+        - After forming the cluster, it will form another cluster with the clusters close to each other. And this goes increasing further.
+        - If there is any point which is not involved in the cluster, later it gets merged with its closest custer.
+        - The graph which will show the above process visually is called as DENDOGRAM.
+        - So, We must consider longest vertical line through which the horizontal line cannot be passed.
+        - Hence, the clusters forming below that line will be our final count of clusters.
+
+    - NOTE: Hierarchical clustering will take more time than K-MEANS to execute. Because it will be create dendograms every time.
+
+    -> Silhouette Score:
+        - Use to validate the clustering models.
+        - It calculates the average distance between centroid and all the points in the cluster.(Ai)
+        - After,It will calculate the average distance between points of 1st cluster and all the points in the closest cluster to the 1st individually.(Bi)
+        - Ranges between -1 to +1.
+        - Closer to 1, Better the model.
+
+    -> DBSCAN (Density Based Spatial Clustering of Application) Clustering:
+        - Leaves the outliers aside. It does not get included into the groups. It is called as Noise Points. 
+        - Epsilon: Point at the center of the circle of the data points.
+        - Min Points(hyperparameter): No. of points that will be included in the circle.
+        - BORDER point: If there is only 1 point in the circle. 
+        - NOISE point: If the circle has no point in it(outliers).
+
