@@ -1,0 +1,54 @@
+> Deep Learning:
+    - Subset of Machine Learning.
+    - Main Aim of DL is to mimic human brain. Thinks in the same way as the human brain thinks.
+    - Make a machine learn and thinks in a human way with the help of Artificial Neurons.
+    - Works on Neural Networks.
+
+> Types of Deep Learning:
+    - ANN (Artificial Neural Networks): Works on the Tabular Datasets. Work done by ML can be done with ANN.
+    - CNN (Convolution Neural Networks): Input data is in the form of Images or Videos. 
+                                        eg. Image Classification, Object Detection, Object Segmentation, Face Recognition, Tracking of Moving Objects.
+    - RNN (Recurrent Neural Network): Works on Text, Time-Series Data or Sequential Data.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+> Machine cannot recognize human readable text. Hence they are converted into some numerical format. This collections of numbers is called as VECTORS.
+
+> Techniques to convert words into vectors:
+    - Bag of Words(BOW)
+    - Term Frequency - Inverser Term Frequency(TF-IDF).
+    - Word2Vec
+    - Embeddings
+
+------------------------------------------------------------------------------------------------------------------------------------------
+> Neural Networks:
+    - Method in artificial intelligence that teaches computers to process data in a way that is inspired by the human brain.
+    -> Perceptron:
+        - Types:
+            1. Single Layer:
+            2. Multilayer: 
+        - Perceptron is a linear Machine Learning algorithm used for supervised learning for various binary classifiers. 
+        - It is a collection of neurons and hidden layers.
+        - Every neuron is connected with each other.
+        - The initial layer of the perceptron is called as Input Layer, the middle layers are called as Hidden layer & final layer is called as Output Layer.
+        - Initially, the input layer takes the input row by row of the dataset.
+        - It further get processed in the hidden layer and the output is collected in the output layer.
+
+> Data points are assinged with weights and summations of all the records with weights are transferred to next layer.
+    - eg. Xi = Record in dataset.
+        Wi = Weights assigned to datapoints.
+        X1W1 + X2W2 + X3W3 + ... + XnWn -------> Transferred to next layer.
+    
+    - Weights are used to activate the neurons in the neural network.
+    - Bias: Suppose, the weight assigned to all variable is 0. Hence, further the later layers will not get executed. Hence, even if the weights are assigned to 0 then the bias value is assigned to the next layer.
+    - Activation Function: Use to activate a neuron. Also, it stats whether the neuron is activated or not.
+    - This total process is called as Forward Propogation. 
+
+> Loss Function is the difference between the actual value and predicted value. It should be as minimum as possible.
+
+> Hence, to reduce the value of loss function Back Propogation is done. 
+
+> Back Propogation is used to update the weights so that the difference between the actual value and the predicted value must be as less as possible.
+
+> Optimizers: Make sure that each and every weight is getting updated during back propogation. 
+                eg. Gradient Discent: It increases or decreases until it gets to the global minima. GLobal minima is the value where the difference in actual value and predicted value is minimum.  

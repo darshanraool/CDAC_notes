@@ -16,14 +16,16 @@
                     variable to train the model. And when a new value comes, the model predicts the result of new value based on the results of old values. 
         -> Types of Supervised ML: 
             1. Classification: The dependant feature(variable or column) contains categorical values.
-                eg. Pass/Fail -> Binary Classification Problem.
-                    Predicting the type of animal from data i.e Lion, Tiger, Dog, Cat -> Multiclass classification.
+                eg. Binary Classification Problem. -> Pass/Fail
+                    Multiclass classification. -> Predicting the type of animal from data i.e Lion, Tiger, Dog, Cat
+                    Multilabel Classification -> Type of Movie - Thriller, Romance, Suspense.                    
 
             2. Regression: The dependant feature(variable or column) contains numerical or continuous values.
                 eg. House Prices prediction by its location.
                     Prediction of Salary by Designation and Experience.
 
     - Unsupervised ML: There is no output in this type of ML Algo. The dataset if divided into groups called CLUSTERS. Unsupervised learning models don't need supervision while training data sets, making it an ideal ML technique for discovering patterns, groupings and differences in unstructured data.
+    - Semi-Supervised Machine Learning: Trains the model on the labelled data and will learn according to your actions and will recommend similar content to you. 
 
 > Parameters: They are the arguments which are used to control the training aspects of the algorithm. Parameters are passed by default internally by the algorithm itself if we do not specify any of them.
 
@@ -221,4 +223,5 @@
         - Min Points(hyperparameter): No. of points that will be included in the circle.
         - BORDER point: If there is only 1 point in the circle. 
         - NOISE point: If the circle has no point in it(outliers).
+        
 
