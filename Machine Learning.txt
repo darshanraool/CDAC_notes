@@ -1,19 +1,19 @@
-> Artificial Intelligence : Technology that can do its task without any human intervention(action).\
+> Artificial Intelligence: Technology that can do its task without any human intervention(action).\
 
-> Machine learning: It provides the statistical tools for analyze and forecast or predict the data.
+> Machine learning: It provides statistical tools for analyzing and forecast or predicting the data.
 
-> Deep Learning: Subset of ML. It is used to mimic the human brian i.e it learns from the data just like human brain.
+> Deep Learning: Subset of ML. It is used to mimic the human brain i.e. it learns from the data just like the human brain.
 
-> Main job of Data Scientist is to deal with all the above technology to develop an AI application.
+> Main job of a Data Scientist is to deal with all the above technology to develop an AI application.
 
 > How to learn and understand the working of any Algorithm:
-    1. What problem the algorithm solve?
+    1. What problem does the algorithm solve?
     2. Geometric Intuition: Understand the solving answers using diagrams.
     3. Mathematical Intuition: Understand the mathematics behind the working of Algorithms. 
 
 > Types of ML Algorithms:
-    - Supervised ML: Predict the values of dependant variable from independant variable. It gives the data of dependant and independant
-                    variable to train the model. And when a new value comes, the model predicts the result of new value based on the results of old values. 
+    - Supervised ML: Predict the values of the dependent variable from the independent variable. It gives the data of dependant and independent
+                    variables to train the model. And when a new value comes, the model predicts the result of a new value based on the results of old values. 
         -> Types of Supervised ML: 
             1. Classification: The dependant feature(variable or column) contains categorical values.
                 eg. Binary Classification Problem. -> Pass/Fail
@@ -42,6 +42,7 @@
         - Use to identify the best fit line with minimal error the help of calculating the means of the errors of all the datapoints.
         - Predicts a value of a variable on the basis of various dependant variable.
         - Residual error: Difference between actual value(Value on the best fit line) and predicted Value of a record in the dataset.
+	- Best Fit line is the line from where the error between the actual values and predicted values is minimum.
         - Best fit line is a line whcih tells you about the predicted values of Y variable with respect to X variable.
         - Equation of straight line:
             y = mx + c 
