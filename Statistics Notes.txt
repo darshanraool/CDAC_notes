@@ -31,7 +31,11 @@ Datasets: UCI Dataset Repository
 	- Value with greatest frequency. 
 	- The value which is repeated very large times in the data. 
 	- There can be multiple nodes for a single data. It is known as multi-modal data.
-	
+
+> Skew: There are a large number of points on either side of the data.
+	- Left Skewed: Larger values are in high quantity in data.
+	- Right Skewed: Smaller values are in high quantity in data.	
+
 > Quartiles:
 	- Divides the sorted data into 4 equal parts. Each part has equal no. of records.
 	- Quartiles are equally spaced if the data has equal difference between the records.
@@ -55,6 +59,18 @@ Datasets: UCI Dataset Repository
 	
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
+> Probability Density Function: Tells about the probability of picking up a random variable from the distibution.
+
+> Uniform Distribution: The probability of every variable is equal to each other. Does not exists in real life.
+
+> Bernoulli Dstribution: Any event with a single trial and only two outcomes follows a Bernoulli distribution. Flipping a coin or choosing between True and False in a quiz are examples of a Bernoulli distribution.
+
+> Binomial Distribution: Executing Bernoulli events mutiple times. An example of a binomial event would be flipping a coin multiple times to count the number of heads and tails.
+
+> Poisson Distribution: The probability that an event may or may not occur. Deals with the frequency with which an event occurs within a specific interval. For example, a cricket chirps two times in 7 seconds on average. We can use the Poisson distribution to determine the likelihood of it chirping five times in 15 seconds.
+
+> Exponential distribution is one of the widely used continuous distributions. It is used to model the time taken between different events.
+
 > Probability:
 	1. Collectively Exhautive Events: Any one event will occur in a set of given events.
 	
@@ -73,6 +89,16 @@ Datasets: UCI Dataset Repository
 	- It is equal to Arithmetic Mean. 
 	
 > Marginal and conditinal probability distribution:
+
+> One Sample Hypothesis testing: Used to assume the mean of population with the help of a sample of the population.
+	-> t-test : Std. Deviation is known.
+	-> Z-test : Std. Deviation is not known.
+
+> Paired t-test: Used when two or more samples data is identical with each other.
+
+> Two Sample test: Used to test whether there is a significant difference between the means of two samples.
+
+> ANOVA : ANOVA (ANalysis Of VAriance) is a statistical method for testing the equality of several population means. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 	
