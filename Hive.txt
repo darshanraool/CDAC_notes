@@ -30,7 +30,7 @@
 > Skewed Table:
 	
 # distributed by :
-	- Records with the specified field will be sent in the table using a n reducer.
+	- A single reducer will be allocated to the records with same value.
 	eg. No.	Age	Name
 		1	10	abc
 		2	15	aaa
