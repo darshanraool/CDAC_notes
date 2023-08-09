@@ -1,0 +1,50 @@
+> Tableau:
+    - Is a Business Intelligence tool for visually analyzing the data. 
+    - Users can create and distribute an interactive and shareable dashboard, which depict the trends, variations, and density of the data in the form of graphs and charts. 
+    - Tableau can connect to files, relational and Big Data sources to acquire and process data. 
+    - The software allows data blending and real-time collaboration, which makes it very unique.
+
+> Design FLow of Tableau:
+    - Connect to Data Source
+    - Build Data Views
+    - Enhance the Views
+    - Create Worksheets
+    - Create and Organize Dashboards
+    - Create a Story
+
+> File Extensions of Tableau:
+    - Tableau Workbook(.twb)
+    - Tableau Packaged Workbook(.twbx)
+    - Tableau Data Source(.tds)
+    - Tableau Data Source(.tdsx)
+    - Tableau Data Extract(.tde)
+    - Tableau Bookmark(.tbm)
+    - Tableau Preference(.tps)
+
+> Supported Datatypes of Tableau:
+    - String
+    - Number
+    - Boolean
+    - Date & Time
+
+> Show Me:
+    - Contains list of all charts which helps to vizualize the data. 
+
+> Alias:
+    - An alternative name that you can assign to a field or to a dimension member.
+
+> Calculated Field:
+    - A new field that you create by using a formula to modify the existing fields in your data source.
+    - eg. Package = Monthly Salary * 12
+
+> Dashboard:
+    - A combination of several views arranged on a single page.
+
+> Data Pane: 
+    - A pane on the left side of the workbook that displays the fields of the data sources to which Tableau is connected. The fields are divided into dimensions and measures.
+
+> Data Source Page:
+    - A page where you can set up your data source. The data source page generally consists of four main areas − left pane, join area, preview area, and metadata area.
+
+> Dimension: 
+    - A field of categorical data. 
