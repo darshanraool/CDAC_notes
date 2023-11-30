@@ -1,20 +1,20 @@
 > Apache Hadoop is a collection of open-source software utilities that facilitates using a network of many computers to solve problems involving massive amounts of data and computation.
 
 > Hadoop is made up of 3 parts:
-	1. HDFS(Storage) - Hadoop Distributed File System
+	1. HDFS(Storage) - Hadoop Distributed File System. Uses the Google File System to store the data. Break file into chunks and stores them in the distributed nodes. 
 	2. MapReduce(Processing) - processing large data sets in scalable & parallel fashion. Tool to perform ETL Operations.
 	3. YARN (Cluster Resource Management) - framework for job scheduling and cluster resource management. Helps MapReduce to find where the blocks are residing.
 
 > Hive:
-	- Use to apply schema to the data when there is requirement to analyze it.
+	- Use to apply schema to the data when there is a requirement to analyze it.
 
 > Data Warehouse:
-	- Provides a common interface to the heterogenous form of data.
+	- Provides a common interface to the heterogeneous form of data.
 	- Data warehouse data is read-only & non-volatile.
 
-> Data Warehouse is not a cost-effective way of storing Data. Hence, Big Data tools are used to save money and store large amount of data.
+> A Data Warehouse is not a cost-effective way of storing Data. Hence, Big Data tools are used to save money and store large amounts of data.
 
->  ETL(Extract, Transform, and Load) will perform cleaning operation on the data in Staging Area.
+>  ETL(Extract, Transform, and Load) will perform cleaning operations on the data in the Staging Area.
 
 > Hadoop Cluster:
 	NameNode: Resource Manager	  ------> Main Node that manages DataNodes
