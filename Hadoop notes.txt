@@ -1,18 +1,42 @@
 > Apache Hadoop is a collection of open-source software utilities that facilitates using a network of many computers to solve problems involving massive amounts of data and computation.
 
-> Hadoop is made up of 3 parts:
-	1. HDFS(Storage) - Hadoop Distributed File System. Uses the Google File System to store the data. Break file into chunks and stores them in the distributed nodes. 
-	2. MapReduce(Processing) - processing large data sets in scalable & parallel fashion. Tool to perform ETL Operations.
-	3. YARN (Cluster Resource Management) - framework for job scheduling and cluster resource management. Helps MapReduce to find where the blocks are residing.
-
-> Hive:
-	- Use to apply schema to the data when there is a requirement to analyze it.
+> 3 V's of Big Data:
+	> Volume: Defined as the Amount of Data Generated from the source.
+	> Variety: Defined as the Type of Data Generated from the source.
+	> Velocity: Defined as the Rate at which Data Generated from the source. eg. GB/s, MB/s, etc.
 
 > Data Warehouse:
 	- Provides a common interface to the heterogeneous form of data.
 	- Data warehouse data is read-only & non-volatile.
 
 > A Data Warehouse is not a cost-effective way of storing Data. Hence, Big Data tools are used to save money and store large amounts of data.
+
+> Components of Hadoop (3 Parts):
+	1. HDFS(Storage) - Hadoop Distributed File System. Uses the Google File System to store the data. Break file into chunks and stores them in the distributed nodes. 
+	2. MapReduce(Processing) - processing large data sets in scalable & parallel fashion. Tool to perform ETL Operations.
+	3. YARN (Cluster Resource Management) - framework for job scheduling and cluster resource management. Helps MapReduce to find where the blocks are residing.
+
+
+> Hadoop Common: Java Libraries used to start hadoop and other Hadoop modules.
+
+> Hadoop Architecture consists of:
+	- File System
+	- MapReduce engine
+		- MapReduce / MR1
+		- YARN / MR2
+	- HDFS
+
+> Hadoop consists of single master and multiple slave nodes.
+
+> Master node (NameNode) consists of:
+	- Job Tracker: 
+	- Task Tracker
+	- NameNode
+	- DataNode
+
+>  Slave Node (DataNode) consists of:
+	- DataNode
+	- Task Tracker
 
 >  ETL(Extract, Transform, and Load) will perform cleaning operations on the data in the Staging Area.
 
@@ -31,12 +55,30 @@
 # hdfs dfsadmin -report:
 	- list the details & nodes in a hadoop cluster.
 	
-> NameNode = Master Process in hadoop
-> DataNode = Worker Process 
+> NameNode:
+	- Single POC for the client to contact with the cluster.
+	- Master Process in hadoop. 
+	- Manages file system namespace by executing operations like opening, renaming, and closing files.  
+	
+> DataNode:
+	- Nodes that hold the actual data.
+	- Worker Process.
+	- Responsible for reading and writing requests from the file system.
+	- Performs block creation, deletion, and replication of data.
 
-> Volume: Defined as the Amount of Data Generated from the source.
-> Variety: Defined as the Type of Data Generated from the source.
-> Velocity: Defined as the Rate at which Data Generated from the source. eg. GB/s, MB/s, etc.
+> Job Tracker:
+	- Accept MapReduce jobs from the client and process data using NameNode.
+	- Hold the info. about which node is executing which job. 
+	- NameNode provides metadata (details of job) to the Job Tracker.
+
+> Task Tracker:
+	- Slave Node for Job Tracker.
+	- Used to map the data and metadata of Job Tracker.
+	- Receives task and code from Job Tracker and applies that code on file which is called Mapper.
+
+> Client application sends the job to Job Tracker ---> Job Tracker sends the request to Task Tracker and it executes the job.
+
+> In case, Task Tacker fails, the job gets rescheduled.
 
 > dfs.blocksize:
 	- When client sends the data to NameNode, it breaks the data into blocks(default size =128 MB) & the distributed blocks are stored in the Data Node individually.
@@ -71,13 +113,12 @@
 	
 > Hadoop 2.x can be used as a Data Lake. 
 
-
 > Workflow of Hadoop:
 	Injesting the data ---------> Clean the data-------------> Transform -----------> Store in Hadoop
 
 > Hadoop Ecosystem Projects:
 	> PIG: ETL tool used over Hadoop.
-	> HIVE: Retrive results in schema format. Perform Data Analytics. 
+	> HIVE: Retrive results in schema format. Perform Data Analytics. Use to apply schema to the data when there is a requirement to analyze it.
 	> HBase: Non Relation Database having depedency of Hadoop.
 	> Accumulo: More secure than HBase.
 	> Ambari: Create and Manage Hadoop Clusters.
