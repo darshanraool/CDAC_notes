@@ -1,23 +1,62 @@
 > Spark:
-	- Batch and real-time data processing system.
+	- Distributed, open-source, Batch and real-time data processing system.
+	- Utilizes in-memory caching and support query optimization.
 	
 > Spark Modes of Deployment:
 	- Local  Mode: Runs on Single machine.
 	- Cluster Mode: Set of multiple machines.
-	
+
+> Features of Spark:
+	- Speed
+	- Powerful Caching
+	- Deployment
+	- Real-Time
+	- Polyglot: Provide high level API for python, Scala and Java. Provides Shell for Scala and Python. 
+
+> Spark Architecture is based on:
+	- Resilient Distributed Dataset (RDD).
+	- Directed Acyclic Graph (DAG).
+
+> Spark Architecture consists of:
+	Spark Context -------> Cluster Manager --------> Executor1 ,Executor2.
+
+> Spark Web Console:
+	- Shows the status of jobs (whether it is executed or not) and other statistics.
+	- https://localhost:4040
+
 > repl: Interactive shell of Spark;
 
-> SparkContxt: Entry point in the Spark Cluster. Way to connect in the Spark World.
+> SparkContext: Entry point in the Spark Cluster. Way to connect in the Spark World.
 
-> RDD(Resilient Distributed Dataset): Base data model for . It is a distributed Dataset. It is a distributed data structure of spark. 
-> RDD is a collection of the data in the blocks known as Partitions created by Spark. The blocks of spark collects the data from the blocks of Hadoop.
+> RDD(Resilient Distributed Dataset): Base data model for Spark. It is a distributed Dataset. It is a distributed data structure of spark. 
+
+> RDD is a collection of the data in the blocks known as Partitions created by Spark. The blocks of spark collect the data from the blocks of Hadoop. Blocks are immutable in nature.
 	
-> RDD pratitions are created on the memory of the DataNodes where the blocks of Data are created.
+> RDD partitions are created on the memory of the DataNodes where the blocks of Data are created.
+
+> RDD follows lazy evaluation. That means all the TRANSFORMATION performed on the RDD will get executed when an ACTION is performed.
+
+> RDD can be created in 2 ways:
+	- Parallelizing an existing collection such as List, tuples, etc.
+	- referencing a dataset in an external storage system such as HDFS, HBase, etc.
 
 # export PYSPARK_DRIVER_PYTHON="jupyter"
 # export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
-> PySpark SQL is spark library for structured data. Provides more info. about structured data and computation.
+> Spark Streaming: 
+	- Spark component that process real-time streaming data. 
+	- Data can be ingested from many sources like Kafka, Flume and HDFS.
+	- Data can be processed using complex algorithms and pushed to file systems, databases and live dashboards.
+
+> PySpark SQL: 
+	- Spark library for processing structured data. 
+	- Provides more info. about structured data and computation.
+
+> Spark MLlib:
+	- Library that contains a wide variety of ML algorithms. like classification, regression, etc.
+
+> GraphX:
+	- Library to manipulate graph databases and perform computations on them.
 
 > PySpark Data Frame is an immutable distributed collection of data with name columns.
 
