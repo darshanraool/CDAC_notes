@@ -40,6 +40,31 @@
 	- Parallelizing an existing collection such as List, tuples, etc.
 	- referencing a dataset in an external storage system such as HDFS, HBase, etc.
 
+> RDD Transformations:
+	- Modifying operations performed on RDD. After every transformation, a new RDD will be created.
+	- Types:
+		1. Narrow Transformation: Operations that are performed on a single partition. eg. map(), filter().
+		2. Wide Transformation (Shuffling Transformation): Operations that are performed on multiple partitions. Data will be moved from partition to partition i.e. shuffling of data is done. eg. reduceByKey(), groupByKey().
+# --------------------------------------------------------------------------------------------------------------------------------------
+> Spark SQL shuffle: Mechanism for redistributing or re-partitioning of data.
+
+> Spark Shuffle: 
+	- Shuffling is the process of exchanging data between partitions.
+	- Spark RDD shuffle:
+		- operations include repartition(), groupByKey(), reduceByKey(), cogroup() and join(). This shuffle works on re-distribution and re-partition.
+
+	- Spark Default Shuffle Partition:
+		- Default partition number is 200. 
+		- Configuration file: spark.sql.shuffle.partitions
+
+# --------------------------------------------------------------------------------------------------------------------------------------
+
+> Data Locality:
+	- Spark Scheduler runs the task on the machine where the data is located.
+
+> Install pyspark from anaconda:
+	# conda install -c conda-forge findspark.
+
 # export PYSPARK_DRIVER_PYTHON="jupyter"
 # export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
