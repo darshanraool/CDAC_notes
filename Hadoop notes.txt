@@ -11,13 +11,11 @@
 
 > A Data Warehouse is not a cost-effective way of storing Data. Hence, Big Data tools are used to save money and store large amounts of data.
 
-> Components of Hadoop (3 Parts):
-	1. HDFS(Storage) - Hadoop Distributed File System. Uses the Google File System to store the data. Break file into chunks and stores them in the distributed nodes. 
+> Modules in of Hadoop:
+	1. HDFS(Storage) - Hadoop Distributed File System. Uses the Google File System to store the data. Break file into chunks and stores them in the distributed nodes. It follows principle of write once and read many times.
 	2. MapReduce(Processing) - processing large data sets in scalable & parallel fashion. Tool to perform ETL Operations.
-	3. YARN (Cluster Resource Management) - framework for job scheduling and cluster resource management. Helps MapReduce to find where the blocks are residing.
-
-
-> Hadoop Common: Java Libraries used to start hadoop and other Hadoop modules.
+	3. YARN (Cluster Resource Management) - framework for job scheduling and cluster resource management. Helps MapReduce to find where the blocks are residing. It is resource management layer of hadoop.
+	4. Hadoop Common: Java Libraries used to start hadoop and other Hadoop modules.
 
 > Hadoop Architecture consists of:
 	- File System
@@ -108,7 +106,7 @@
 
 > Hadoop cannot collect the data from sources, it just stores the data. Hence, Hadoop Ecosystem Projects contains tools that collaborate with Hadoop to extract data.
 
-> Hadoop Ecosystem Projects intergrates with Hadoop in order to collect data and store in Hadoop.
+> Hadoop Ecosystem Projects intergrates with Hadoop to collect data and store in Hadoop.
 	eg. Collect opinions of people on a film from Twitter using Apache Flume (tool for streaming data in Hadoop) and store in HDFS(Hadoop).
 	
 > Hadoop 2.x can be used as a Data Lake. 
