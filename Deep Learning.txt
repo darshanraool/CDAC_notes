@@ -41,7 +41,8 @@
     
     - Weights are used to activate the neurons in the neural network.
     - Bias: Suppose, the weight assigned to all variable is 0. Hence, further the later layers will not get executed. Hence, even if the weights are assigned to 0 then the bias value is assigned to the next layer.
-    - Activation Function: Use to activate a neuron. Also, it stats whether the neuron is activated or not.
+    - Activation: Output produced by each neuron which is further sent to the next layer of the neurons in the neural network.
+    - Activation Function: It is use to activate a neuron. It is a function use to calculate the activation of current layer on the basis of activation of previous layer. There are different activation function for different outputs eg. binary classification, multilabel classification, regression, etc.  
     - This total process is called as Forward Propogation. 
 
 > Loss Function is the difference between the actual value and predicted value. It should be as minimum as possible.
